@@ -11,6 +11,11 @@ urlpatterns = [
     path("tech_list",views.TechListView.as_view(),name="tech_list"),
     path("tech_create",views.TechCreateView.as_view(),name="tech_create"),
     path("tech_confirm_delete/<int:pk>/",views.TechDeleteView.as_view(),name="tech_confirm_delete"),
-   
     path("tech_edite/<int:pk>/",views.TechUpdateView.as_view(),name="tech_edit"),
+   
+    path("speciality_edite/<int:pk>/",views.SpecialityUpdateView.as_view(),name="speciality_edit"),
+    path("speciality_list",views.SpecialityListView.as_view(),name="speciality_list"),
+    path("speciality_create",views.SpecialityCreateView.as_view(),name="speciality_create"),
+    path("speciality_confirm_delete/<int:pk>/",views.SpecialityDeleteView.as_view(),name="speciality_confirm_delete"),
+    path("speciality_edite/<int:pk>/",views.SpecialityUpdateView.as_view(),name="speciality_edit"),
 ]
