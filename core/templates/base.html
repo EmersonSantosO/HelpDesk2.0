@@ -10,26 +10,64 @@
 </head>
 <body>
     <div class="container text-center">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a href="{% url 'home' %}" class="navbar-brand">HelpDesck 2.0</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false"aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+            <a href="{% url 'home' %}" class="navbar-brand m-2">HelpDesck 2.0</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse"id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a href="{% url 'home' %}" class="nav-link">Inicio<span class="sr-only"></span></a>
-                        <a href="{% url 'ticket_create' %}" class="nav-link">Crear Ticket<span class="sr-only"></span></a>
-                        <a href="{% url 'tech_list' %}" class="nav-link">Tecnicos<span class="sr-only"></span></a>
-                        <a href="{% url 'tech_create' %}" class="nav-link">Añadir Tecnico<span class="sr-only"></span></a>
-                        <a href="{% url 'speciality_list' %}" class="nav-link">Especialidades<span class="sr-only"></span></a>
-                        <a href="{% url 'speciality_create' %}" class="nav-link">Añadir Especialidad<span class="sr-only"></span></a>
+                        <a href="{% url 'home' %}" class="nav-link">
+                            <i class="bi bi-house-door"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="ticketDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-card-text"></i>
+                            Tickets
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="ticketDropdown">
+                            <a href="{% url 'ticket_create' %}" class="dropdown-item">Crear Ticket</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'tech_list' %}" id="techDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i>
+                            Técnicos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="techDropdown">
+                            <a href="{% url 'tech_list' %}" class="dropdown-item">Lista de Técnicos</a>
+                            <a href="{% url 'tech_create' %}" class="dropdown-item">Añadir Técnico</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'speciality_list' %}" id="techDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i>
+                            Especialidades
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="techDropdown">
+                            <a href="{% url 'speciality_list' %}" class="dropdown-item">Lista de Técnicos</a>
+                            <a href="{% url 'speciality_create' %}" class="dropdown-item">Añadir Técnico</a>
+                        </div>
                     </li>
                 </ul>
-
+                <form class="d-flex ml-auto">
+                    <input class="form-control mr-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                </form>
             </div>
         </nav>
     </div>
+    
+    
+    
+    
+    
+    
+    
     <div class="container">
         {% block content %}
         {% endblock %}
