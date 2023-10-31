@@ -1,4 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Tecnico</th>
+            <th>Nivel de Urgencia</th>
+        </tr>        
+    </thead>
+    <tbody>
+        {% for ticket in object_list %}
+        <tr>
+            <td>{{ ticket.title }}</td>
+            <td>{{ ticket.tech }}</td>
+            <td><i class="bi bi-alarm-fill"></i>{{ ticket.criticy }}</td>
+            <td>
+                <a class="btn btn-info"><i class="bi bi-search"></i>Detalles</a>
+                <a class="btn btn-danger" href="{% url 'ticket_confirm_delete' ticket.id %}"><i class="bi bi-x-circle"></i>Eliminar</a>
+                <a class="btn btn-warning"><i class="bi bi-pencil-square"></i>Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
 {% endblock %}
