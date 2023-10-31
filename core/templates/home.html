@@ -6,7 +6,7 @@
         <tr>
             <th>Titulo</th>
             <th>Tecnico</th>
-            <th>Nivel de Urgencia</th>
+            <th>Estado</th>
         </tr>        
     </thead>
     <tbody>
@@ -14,11 +14,13 @@
         <tr>
             <td>{{ ticket.title }}</td>
             <td>{{ ticket.tech }}</td>
-            <td><i class="bi bi-alarm-fill"></i>{{ ticket.criticy }}</td>
+            <td><i class="bi bi-alarm"></i>{{ ticket.criticy }}</td>
+
+        
             <td>
-                <a class="btn btn-info"><i class="bi bi-search"></i>Detalles</a>
+                <a class="btn btn-secondary" href="{% url 'ticket_detail' ticket.id %}"><i class="bi bi-search"></i>Detalles</a>
                 <a class="btn btn-danger" href="{% url 'ticket_confirm_delete' ticket.id %}"><i class="bi bi-x-circle"></i>Eliminar</a>
-                <a class="btn btn-warning"><i class="bi bi-pencil-square"></i>Editar</a>
+                <a class="btn btn-warning" href="{% url 'ticket_edit' ticket.id %}"><i class="bi bi-pencil-square"></i>Editar</a>
             </td>
         </tr>
         {% endfor %}

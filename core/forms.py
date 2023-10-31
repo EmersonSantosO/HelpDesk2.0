@@ -17,7 +17,7 @@ class TechForm(forms.ModelForm):
         fields = ["name","last_name","speciality"]
         widgets = {"name":forms.TextInput(attrs={"class":"form-control"}),
                    "last_name":forms.TextInput(attrs={"class":"form-control"}),
-                   "speciality":forms.Select(attrs={"class":"form-control"})}
+                   "speciality":forms.SelectMultiple(attrs={"class":"form-control"})}
 
 
 class SpecialityForm(forms.ModelForm):

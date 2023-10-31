@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Eliminar Ticket: {{ object.title }}</h2>
+<p>¿Estás seguro que deseas eliminar este ticket?</p>
+<form action="" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'tech_list' %}" class="btn btn-secondary">Volver</a>
+
+</form>
+
+{% endblock %}
