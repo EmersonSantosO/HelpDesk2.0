@@ -20,6 +20,11 @@ class Tech(models.Model):
         return self.name
 
 
+class History(models.Model):
+    date = models.DateTimeField(verbose_name="Date",auto_now_add=True)
+    description = models.TextField(verbose_name="Description")
+
+
 class Ticket(models.Model):
     title = models.CharField(verbose_name="Title", max_length=50)
     description = models.TextField(verbose_name="Description")
@@ -27,9 +32,9 @@ class Ticket(models.Model):
     updated_at = models.DateTimeField(auto_now=True,verbose_name="Update at")
     tech = models.ForeignKey(Tech,verbose_name="Tech",on_delete=models.SET_NULL,null=True,blank=True)
     criticy = models.ForeignKey(Criticy,verbose_name="Criticy",on_delete=models.SET_NULL,null=True,blank=True)
+    history = models.ManyToManyField(History,blank=True)
     def __str__(self) -> str:
         return self.title
-
 
 
 
