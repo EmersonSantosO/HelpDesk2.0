@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h2>Iniciar Sesion</h2>
+<div class="cold-md-6 mx-auto">
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label>Usuario</label>
+            <input type="text" name="username" class="form-control" required>
+        </p>
+        <p>
+            <label>Contraseña</label>
+            <input type="password" name="password" class="form-control" required>
+        </p>
+        {% if form.non_field_errors %}
+        <p class="text-danger">Usuario y/o contraseña incorrectos, por favor intente nuevamente</p>
+        {% endif %}
+        <p><a style="text-decoration: none;" href="{% url 'signup' }">Cree una cuenta aqui</a></p>
+        <input type="submit" class="btn btn-success" value="Login">
+        <a href="{% url 'ticket_list' %}" class="btn btn-outline-secondary">Cancelar</a>
+    </form>            
+            
+
+</div> 
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h2>My Perfil</h2>
+<div class="row mt-3 cold-md-6">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" class="btn btn-warning" value="Update">
+        <a href="{% url 'ticket_list' %}" class="btn btn-dark">Volver</a>
+
+    </form>
+</div>
+{% endblock %}

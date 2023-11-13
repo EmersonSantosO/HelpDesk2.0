@@ -1,5 +1,5 @@
 from django import forms
-from .models import Ticket, Tech, Speciality
+from .models import Ticket, Tech
 class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
@@ -14,16 +14,10 @@ class TicketForm(forms.ModelForm):
 class TechForm(forms.ModelForm):
     class Meta:
         model = Tech
-        fields = ["name","last_name","speciality"]
+        fields = ["name","last_name"]
         widgets = {"name":forms.TextInput(attrs={"class":"form-control"}),
-                   "last_name":forms.TextInput(attrs={"class":"form-control"}),
-                   "speciality":forms.SelectMultiple(attrs={"class":"form-control"}),
+                   "last_name":forms.TextInput(attrs={"class":"form-control"}),  
                    }
 
 
-class SpecialityForm(forms.ModelForm):
-    class Meta:
-        model = Speciality
-        fields = ["name"]
-        widgets = {"name":forms.TextInput(attrs={"class":"form-control"})}
 

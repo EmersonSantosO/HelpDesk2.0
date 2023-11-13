@@ -9,10 +9,9 @@
     <li><strong>Técnico:</strong> {{ object.tech.name }} {{ object.tech.last_name }}</li>
     <li><strong>Fecha de Creación:</strong> {{ object.created_at }}</li>
     <li><strong>Última Actualización:</strong> {{ object.updated_at }}</li>
-    <li><strong>Historial:</strong> {% for h in object.history.all  %}{{ h.date }}<strong>Descripcion:</strong>{{ h.description }}{% endfor %}</li>
 </ul>
 
 <a href="{% url 'ticket_edit' object.id %}" class="btn btn-warning">Editar</a>
 <a href="{% url 'ticket_confirm_delete' object.id %}" class="btn btn-danger">Eliminar</a>
-<a href="{% url 'home' %}" class="btn btn-secondary">Regresar</a>
+<a href="{% url 'ticket_list' %}" class="btn btn-secondary">Regresar</a>
 {% endblock %}
