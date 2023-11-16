@@ -3,21 +3,18 @@ from .models import Ticket, Tech
 class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
-        fields = ["title","description","criticy","tech"]
+        fields = ["title","description",]
         widgets = {"title":forms.TextInput(attrs={"class":"form-control"}),
-                   "description":forms.Textarea(attrs={"class":"form-control"}),
-                   "criticy":forms.Select(attrs={"class":"form-control"}),
-                   "tech":forms.Select(attrs={"class":"form-control"}),
+                   "description":forms.Textarea(attrs={"class":"form-control"}),                   
                     }
 
 
 class TechForm(forms.ModelForm):
     class Meta:
         model = Tech
-        fields = ["name","last_name"]
-        widgets = {"name":forms.TextInput(attrs={"class":"form-control"}),
-                   "last_name":forms.TextInput(attrs={"class":"form-control"}),  
-                   }
+        fields = ['first_name', 'last_name']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class':'form-control'}),
+            'last_name': forms.TextInput(attrs={'class':'form-control'}),
 
-
-
+        }

@@ -1,6 +1,3 @@
-from typing import Any
-from django.db import models
-from django.forms.models import BaseModelForm
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from core.models import Tech
@@ -10,7 +7,7 @@ from django import forms
 
 class SignUpView(CreateView):
     form_class = UserCreationForm
-    template_name = "sign_up.html"
+    template_name = "registration/sign_up.html"
 
     def get_success_url(self) -> str:
         return reverse_lazy("login")
@@ -27,7 +24,7 @@ class SignUpView(CreateView):
 class ProfileUpdate(UpdateView):
     form_class = TechForm
     success_url = reverse_lazy("profile")
-    template_name = "profile_form.html"
+    template_name = "registration/profile_form.html"
 
     def get_object(self):
         profile, created = Tech.objects.get_or_create(user=self.request.user)

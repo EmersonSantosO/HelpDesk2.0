@@ -1,4 +1,4 @@
-{% extends "core/base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
 <h2>Iniciar Sesion</h2>
@@ -16,7 +16,7 @@
         {% if form.non_field_errors %}
         <p class="text-danger">Usuario y/o contraseña incorrectos, por favor intente nuevamente</p>
         {% endif %}
-        <p><a style="text-decoration: none;" href="{% url 'signup' }">Cree una cuenta aqui</a></p>
+        <p><a style="text-decoration: none;" href="{% url 'signup' %}">Cree una cuenta aqui</a></p>
         <input type="submit" class="btn btn-success" value="Login">
         <a href="{% url 'ticket_list' %}" class="btn btn-outline-secondary">Cancelar</a>
     </form>            

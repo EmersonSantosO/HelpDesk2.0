@@ -1,4 +1,4 @@
-{% extends "core/base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
 <h2>Registrarse</h2>
@@ -8,7 +8,7 @@
         {{ form.as_p}}
         <p>
             <input type="submit" class="btn btn-success" value="Create">
-            <a href="{% url 'ticket_list' %}" class="btn btn-outline-secondary">Cancelar</a>
+            <a href="{% url 'home' %}" class="btn btn-outline-secondary">Cancelar</a>
         </p>
 
     </form>
